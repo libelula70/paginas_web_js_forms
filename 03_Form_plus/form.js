@@ -1,22 +1,10 @@
+import {FormularioModel} from './form.model.js'
 export class Form {
     constructor() {
         this.domForm = document.querySelector('form')
-        this.data = {
-            user : {
-                name: '',
-                apellidos: ''
-            },
-            email:'',
-            passw : '',
-            comentarios: '',
-            opciones: {
-                condiciones: '',
-                turno: '',
-                curso: ''
-            },
-            aficiones : []
-        }
+        this.data = new FormularioModel()
         this.domForm.addEventListener('submit', this.enviar.bind(this))
+        console.log(this.data)
     }
     
     enviar(oEv) {
@@ -28,7 +16,7 @@ export class Form {
         this.data.comentarios = document.querySelector('#comentarios').value
         
         this.data.opciones.condiciones = document.querySelector('#condiciones').checked
-        this.data.opciones.turno = this.verTurno ()
+        this.data.opciones.turno = this.setRadio ('turno')
         this.data.opciones.curso = this.verCurso ()
         this.data.aficiones = this.setAficiones()
         
@@ -36,19 +24,21 @@ export class Form {
         
     }
 
-    verTurno() {
+    //Procesa un radioButon, pero podemos hacer general para que me sirva para todos los radiobuton que tenemos, esto sería una función helper
+    setRadio(name) {
         //let aTurnos= document.getElementsByName ('turno')
-        let aTurnos = document.querySelectorAll('[name="turno"]')
-        
-        /* for (let i = 0; i < aTurnos.length; i++) {
-            const item = aTurnos[i];
+        //let id = '[name= ' + name + ']'
+        let id = `[name='${name}']`
+        let aRadio = document.querySelectorAll(id)
+        for (let i = 0; i < aRadio.length; i++) {
+            const item = aRadio[i];
             if (item.checked) {
                 return item.value
             }
-        } */
+        }
 
 
-        let r=''
+        /* let r=''
         let aDatos = []
         aTurnos.forEach (
             item => aDatos.push (item)
@@ -60,7 +50,7 @@ export class Form {
                     r = item.value
                 }
                  })
-        return r
+        return r */
     }
 
     verCurso() {
