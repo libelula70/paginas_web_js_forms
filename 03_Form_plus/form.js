@@ -36,23 +36,10 @@ export class Form {
                 return item.value
             }
         }
-
-
-        /* let r=''
-        let aDatos = []
-        aTurnos.forEach (
-            item => aDatos.push (item)
-        )
-        
-        aDatos.some(    
-            (item, i) => {
-                if (item.checked) {
-                    r = item.value
-                }
-                 })
-        return r */
     }
 
+
+    //Procesa un select/options
     verCurso() {
         const curso = document.querySelector('#curso')
 
@@ -65,6 +52,7 @@ export class Form {
         return oDato
     }
 
+    //Procesa un multicheck
     setAficiones() {
         let aDatos = []
         let aAficiones = document.querySelectorAll('.aficiones')
