@@ -15,7 +15,7 @@ class Masinfo {
     masInfo () {
         this.data.masInfo = document.querySelector('#mas').checked
         if (this.data) {
-            this.form2.classList.remove('hide')
+            this.form2.classList.toggle('hide')
         } 
     }
 }
