@@ -1,5 +1,5 @@
 * {
-    box-sizing:  border-box;
+    box-sizing: border-box;
 }
 
 body {
@@ -9,12 +9,12 @@ body {
 
 .control-group {
     margin-top: 1rem;
-    
+    margin-bottom: 1rem;
 }
 
 .option-group {
     margin-top: 1rem;
-    
+    margin-bottom: 1rem;
 }
 
 .hide {

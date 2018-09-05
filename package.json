@@ -1,0 +1,23 @@
+{
+  "name": "paginas_web_js_forms",
+  "version": "1.0.0",
+  "description": "Ejercicios de la Unidad 2 del Módulo 2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/libelula70/paginas_web_js_forms.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/libelula70/paginas_web_js_forms/issues"
+  },
+  "homepage": "https://github.com/libelula70/paginas_web_js_forms#readme",
+  "dependencies": {
+    "bootstrap": "^4.1.3"
+  }
+}

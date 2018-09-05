@@ -42,7 +42,6 @@ export class Form {
     //Procesa un select/options
     verCurso() {
         const curso = document.querySelector('#curso')
-
         console.dir(curso.selectedIndex)
         console.dir(curso[curso.selectedIndex])
         const oDato = {
