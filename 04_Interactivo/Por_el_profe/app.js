@@ -7,7 +7,7 @@ export class App {
             cbMas : document.querySelector('#mas'),
             slGenero : document.querySelector('#genero'),
             slAutores : document.querySelector('#autor'),
-            btnEnviar: document.querySelector('#btnEnviar')
+            btnEnviar : document.querySelector('#btnEnviar')
         }
 
         this.aGeneros = GENEROS
@@ -18,12 +18,9 @@ export class App {
     }
 
     defineHandlers () {
-        this.dom.cbMas.addEventListener('change',
-                this.setFormFinal.bind(this))
-        this.dom.slGenero.addEventListener('change',
-            this.changeGenero.bind(this))
-        this.dom.formFinal.addEventListener('submit',
-            this.enviar.bind(this))
+        this.dom.cbMas.addEventListener('change', this.setFormFinal.bind(this))
+        this.dom.slGenero.addEventListener('change', this.changeGenero.bind(this))
+        this.dom.formFinal.addEventListener('submit', this.enviar.bind(this))
     }
 
     setFormFinal () {
@@ -51,14 +48,13 @@ export class App {
             this.aGeneros.shift()
             this.crearSelect(this.aGeneros, this.dom.slGenero, i-1)
             this.generosFirst = false
+            this.dom.slAutores.disabled = false
             this.dom.btnEnviar.disabled = false
         }
         i=  this.dom.slGenero.selectedIndex
         console.dir(i)
         console.dir(this.dom.slGenero [i])
         console.log (this.aGeneros[i].autores)
-
-        this.dom.slAutores.disabled = false
         this.crearSelect(this.aGeneros[i].autores, this.dom.slAutores)
     }
 
