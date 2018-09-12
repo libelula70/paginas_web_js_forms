@@ -12,7 +12,7 @@ function main () {
         ajax.onreadystatechange = mostrarDatos
 
         ajax.open('GET', 'datos.json')
-        ajax.send()
+        ajax.send(null)
 
         function mostrarDatos() {
             console.log(ajax.readyState)
