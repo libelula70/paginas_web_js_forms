@@ -14,8 +14,8 @@ function asincP () {
                         reject(number)
                     }
                 }, 3000)
-
-    }) 
+        }
+    ) 
 }
 
 function asincProm() {
