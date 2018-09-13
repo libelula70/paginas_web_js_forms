@@ -18,7 +18,9 @@ export class AjaxService {
                 this.reject = reject
                 this.ajax = new XMLHttpRequest()
                 console.dir(this.ajax)
+                
                 this.ajax.addEventListener('readystatechange', this.getDatos.bind(this))
+                
                 this.ajax.open(this.metodo, this.url)
                 this.ajax.setRequestHeader ('Accept', 'text/txt')
                 this.ajax.send(null)
