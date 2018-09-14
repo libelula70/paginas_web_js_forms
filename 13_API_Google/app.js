@@ -1,6 +1,7 @@
 export class App {
     constructor () {
         this.URLBase = 'https://www.googleapis.com/books/v1/volumes?q='
+        this.libroBase = 'https://www.tiendasantillana.cl/images/portada-no-disponible.png'
         this.nClave = document.querySelector('#clave')
         this.nBtnBuscar = document.querySelector('#btnBuscar')
         this.nOutput = document.querySelector('#output')
@@ -28,15 +29,23 @@ export class App {
             item => {
                 return {
                     autores: item.volumeInfo.authors,
-                    titulo: item.volumeInfo.title 
+                    titulo: item.volumeInfo.title, 
+                    icono: item.volumeInfo.imageLinks ?
+                        item.volumeInfo.imageLinks.smallThumbnail: this.libroBase,
+                    link: item.volumeInfo.infoLink
                 }
             }
         )
         console.log(aLibros)
 
-         aLibros.forEach(item => {
+        aLibros.forEach(item => {
+            let autor = '&nbsp;'
+            if(item.autores) {
+                autor = item.autores.join(' | ')
+            }
             html += `<dt>${item.titulo}</dt>`
-            html += `<dd>${item.autores.join(' ')}</dd>`
+            html += `<dd>${autor}</dd>`
+            html += `<a href="${item.link}"><img src="${item.icono}"></a>`
         });
         html += '</dl>'
         this.nOutput.innerHTML = html
