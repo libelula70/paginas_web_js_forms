@@ -1,0 +1,23 @@
+{
+  "posts": [
+    {
+      "author": "Alejandro",
+      "id": 2,
+      "title": "Todos los lunes"
+    },
+    {
+      "title": "Martes",
+      "author": "Pepe Pérez",
+      "editorial": "Boracay",
+      "id": 3
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  },
+  "tareas" : [
+    {"name" : "Clases curso Página", "isComplete" : false},
+    {"name" : "Reunion de trabajo", "isComplete" : false}
+  ]
+}
