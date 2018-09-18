@@ -17,7 +17,7 @@
     "name": "typicode"
   },
   "tareas" : [
-    {"name" : "Clases curso Página", "isComplete" : false},
-    {"name" : "Reunion de trabajo", "isComplete" : false}
+    {"id": 1, "name" : "Clases curso Página", "isComplete" : false},
+    {"id": 2, "name" : "Reunion de trabajo", "isComplete" : false}
   ]
 }
