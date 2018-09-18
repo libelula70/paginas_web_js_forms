@@ -16,8 +16,26 @@
   "profile": {
     "name": "typicode"
   },
-  "tareas" : [
-    {"id": 1, "name" : "Clases curso Página", "isComplete" : false},
-    {"id": 2, "name" : "Reunion de trabajo", "isComplete" : false}
+  "tareas": [{
+    "id": 1,
+    "name": "Clases curso Página",
+    "isComplete": false
+  },
+  {
+    "id": 2,
+    "name": "Reunion de trabajo",
+    "isComplete": false
+  }],
+  "tareas2": [
+    {
+      "id": 1,
+      "name": "Clases curso Página",
+      "isComplete": false
+    },
+    {
+      "id": 2,
+      "name": "Reunion de trabajo",
+      "isComplete": false
+    }
   ]
 }
