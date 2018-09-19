@@ -3,6 +3,9 @@ import { FetchService } from "./fetch-service.js";
 export class ListaTareas {
     constructor() {
         this.nodoListaTareas = document.querySelector('#lista')
+        this.nodoBtnAdd = document.querySelector('#btnAdd')
+        this.nodoNewTarea = document.querySelector('#tarea')
+        this.nodoBtnAdd.addEventListener('click', this.addTarea.bind(this))
         this.uRL = 'http://localhost:3000/tareas'
         this.aTareas = []
         this.fetchServices = new FetchService ()
@@ -26,7 +29,7 @@ export class ListaTareas {
         )
         this.nodoListaTareas.innerHTML = html
         this.aNodosChecks = document.querySelectorAll('[name="is-completa"]')
-        this.aNodosBorrar = document.querySelectorAll('.borrar-tarea')
+        this.aNodosBorrar = document.querySelectorAll('.borrar-activo')
         this.aNodosChecks.forEach(
             item => item.addEventListener('change', this.checkTarea.bind(this))
         )
@@ -40,28 +43,61 @@ export class ListaTareas {
             <li>
             <input type="checkbox" name="is-completa" id="check-${data.id}"
                 data-id="${data.id}" ${data.isComplete ? 'checked' : '' }>
-            <span class="nombre-tarea">${data.name}</span>
+            <span class="nombre-tarea ${data.isComplete ? 'hecho' : '' }">
+            ${data.name}</span>
             <span id="borrar-${data.id}" data-id="${data.id}" 
-                class="borrar-tarea">🗑️</span>
+                class="borrar-tarea ${data.isComplete ? 'borrar-activo' : 'inactivo' }">🗑️</span>
             </li>
         `
         return htmlView
     }
 
+    addTarea() {
+        if (!this.nodoNewTarea.value) {return}
+        let newTarea = {
+            name: this.nodoNewTarea.value,
+            isComplete: false
+        }
+        let headers = new Headers()
+        headers.append("Content-Type", "application/json")
+        this.fetchServices.send(this.uRL, {
+            method: 'POST',
+            headers : headers,
+            body : JSON.stringify(newTarea)
+        }).then (
+            response => {
+                this.nodoNewTarea.value= ''
+                this.getTareas()
+            },
+            error => console.log (error)
+        )
+
+    }
+
     checkTarea(oEv) {
-        console.log(oEv.target.dataset.id)
+        let datos = {
+            isComplete : oEv.target.checked
+        }
+        let url= this.uRL + '/' + oEv.target.dataset.id
+        let headers = new Headers()
+        headers.append("Content-Type", "application/json")
+        this.fetchServices.send(url, {
+            method: 'PATCH',
+            headers : headers,
+            body : JSON.stringify(datos)
+        }).then (
+            response => this.getTareas(),
+            error => console.log (error)
+        )
     }
 
     borrarTarea(oEv) {
-        console.log(oEv.target.dataset.id)
+        if (!window.confirm('Seguro')) {return}
         //TODO borrar en el servicio web
         let url= this.uRL + '/' + oEv.target.dataset.id
         this.fetchServices.send(url, {method: 'DELETE'})
         .then(
-            data => {
-                console.log(data)
-                this.getTareas()
-        },
+            data => this.getTareas(),
             error => console.log(error)
         )
         

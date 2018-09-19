@@ -16,16 +16,23 @@
   "profile": {
     "name": "typicode"
   },
-  "tareas": [{
-    "id": 1,
-    "name": "Clases curso Página",
-    "isComplete": false
-  },
-  {
-    "id": 2,
-    "name": "Reunion de trabajo",
-    "isComplete": false
-  }],
+  "tareas": [
+    {
+      "id": 1,
+      "name": "Clases curso Página",
+      "isComplete": false
+    },
+    {
+      "id": 2,
+      "name": "Reunion de trabajo",
+      "isComplete": false
+    },
+    {
+      "name": "Aprender Angular",
+      "isComplete": false,
+      "id": 3
+    }
+  ],
   "tareas2": [
     {
       "id": 1,
