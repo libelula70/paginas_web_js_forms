@@ -4,7 +4,7 @@
   "description": "Ejercicios de la Unidad 2 del Módulo 2",
   "main": "index.js",
   "scripts": {
-    "start.API" : "json-server --watch db.json",
+    "start.API": "json-server --watch db.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

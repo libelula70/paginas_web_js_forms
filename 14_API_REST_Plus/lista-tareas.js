@@ -38,7 +38,7 @@ export class ListaTareas {
         console.log ('TODO check tarea')
         console.dir(oEv)
         let datos = {
-            isComplete : oEv.target.children[0]
+            isComplete : oEv.target.children[0].checked
         }
         let url= this.uRL + '/' + oEv.target.children[0].dataset.id
         let headers = new Headers()
@@ -56,9 +56,9 @@ export class ListaTareas {
     borrarTarea(p) {
         let id 
         
-        if (p.target.children[2]) {
+        if (p.target) {
             id = p.target.children[2].dataset.id
-            if (!window.confirm('Seguro')) {return}
+            if (!window.confirm('Seguro?')) {return}
         } else {id = p.id}
 
         console.log(id)

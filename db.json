@@ -20,21 +20,21 @@
     {
       "id": 1,
       "name": "Clases curso Página",
-      "isComplete": {}
+      "isComplete": false
     },
     {
       "id": 2,
       "name": "Reunion de trabajo",
-      "isComplete": {}
+      "isComplete": false
     },
     {
       "name": "Aprender Angular",
-      "isComplete": {},
+      "isComplete": false,
       "id": 3
     },
     {
       "name": "Utilizar componentes",
-      "isComplete": {},
+      "isComplete": false,
       "id": 4
     }
   ],
