@@ -40,7 +40,7 @@ export class Tarea {
 
     sendCheck() {
         console.log('Emitido evento check')
-        this.nodoTarea.dispatchEvent(new Event('checkCompleta', {'bubbles': true}))
+        this.nodoTarea.dispatchEvent(new CustomEvent('checkCompleta', {'bubbles': true, detail: {key: 23}}))
 
     }
 }
