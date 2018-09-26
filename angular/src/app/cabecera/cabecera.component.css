@@ -1,17 +1,17 @@
 header {
     margin-top: 0;
     padding: 2rem 3rem;
-    color: darkred;
-
 }
 h1 {
     margin: 0;
-    text-align: center;
+
 }
 
-div {
-    width: 20%;
-}
+/*div {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto ;
+}*/
 
 img {
     width: 100%;
