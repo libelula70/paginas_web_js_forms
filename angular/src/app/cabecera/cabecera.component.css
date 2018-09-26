@@ -1,18 +1,7 @@
-header {
-    margin-top: 0;
-    padding: 2rem 3rem;
-}
-h1 {
-    margin: 0;
-
-}
-
-/*div {
-    width: 30%;
-    margin-left: auto;
-    margin-right: auto ;
-}*/
-
-img {
+header.cabecera {
     width: 100%;
+}
+div.container-img {
+    margin-left: auto;
+    margin-right: auto;
 }
