@@ -22,4 +22,8 @@ describe('CabeceraComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it(`should have as title 'Getafe'`, async(() => {
+    expect(component.titulo).toContain('Angular');
+  }));
 });
