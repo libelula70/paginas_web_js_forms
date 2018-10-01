@@ -1,10 +1,10 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { CabeceraComponent } from './cabecera/cabecera.component';
-import { MenuComponent } from './menu/menu.component';
-import { MainComponent } from './main/main.component';
-import { PieComponent } from './pie/pie.component';
+import { CabeceraComponent } from './core/cabecera/cabecera.component';
+import { MenuComponent } from './core/menu/menu.component';
+import { MainComponent } from './core/main/main.component';
+import { PieComponent } from './core/pie/pie.component';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({

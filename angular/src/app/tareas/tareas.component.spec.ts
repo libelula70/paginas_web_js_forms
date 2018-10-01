@@ -1,18 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListareasComponent } from './listareas.component';
-import { TareasSimpleComponent } from '../tareas-simple/tareas-simple.component';
+import { TareasComponent } from './tareas.component';
+import { TareasSimpleComponent } from './tareas-simple/tareas-simple.component';
+import { TareasPlusComponent } from './tareas-plus/tareas-plus.component';
 import { FormsModule } from '@angular/forms';
 
-describe('ListareasComponent', () => {
-  let component: ListareasComponent;
-  let fixture: ComponentFixture<ListareasComponent>;
+describe('TareasComponent', () => {
+  let component: TareasComponent;
+  let fixture: ComponentFixture<TareasComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ 
-        ListareasComponent,
-        TareasSimpleComponent
+        TareasComponent,
+        TareasSimpleComponent,
+        TareasPlusComponent
        ],
        imports: [
          FormsModule
@@ -22,7 +24,7 @@ describe('ListareasComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListareasComponent);
+    fixture = TestBed.createComponent(TareasComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
