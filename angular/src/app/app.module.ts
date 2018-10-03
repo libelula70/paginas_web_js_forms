@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
@@ -8,6 +8,12 @@ import { CoreModule } from './core/core.module';
 import { ContactsModule } from './contacts/contacts.module';
 import { HomeModule } from './home/home.module';
 import { TareasModule } from './tareas/tareas.module';
+
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
+
+// the second parameter 'es' is optional
+registerLocaleData(localeEs, 'es');
 
 
 @NgModule({
@@ -23,7 +29,7 @@ import { TareasModule } from './tareas/tareas.module';
     HomeModule,
     TareasModule
   ],
-  providers: [],
+  providers: [ { provide: LOCALE_ID, useValue: 'es' } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
