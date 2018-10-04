@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactoIf } from '../../models/contacto.model';
-import { USERS } from '../../datos/contactos.mock';
+import { UsuariosService } from '../../services/usuarios.service';
+//import { environment } from '../../../environments/environment';
+
 
 @Component({
   selector: 'cas-lista-contactos',
@@ -11,10 +13,21 @@ export class ListaContactosComponent implements OnInit {
 
   aContactos: Array<ContactoIf>
 
-  constructor() { }
+  constructor(public usuarios:UsuariosService) { }
+
+  //anteriormente era servicio Http
+  //actualmente es servicio HttpClient
 
   ngOnInit() {
-    this.aContactos= USERS
+    //this.aContactos= USERS
+    this.aContactos = []
+   /*  this.http.get(environment.api_user).toPromise()
+    .then((response:any) => 
+        {this.aContactos = response.results
+        console.log(this.aContactos)}) */
+    this.usuarios.getLista().then(
+      (response:any) => {this.aContactos = response}
+    )
   }
 
   borrarContacto(emailBorrar) {
