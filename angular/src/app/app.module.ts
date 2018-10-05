@@ -11,6 +11,8 @@ import { TareasModule } from './tareas/tareas.module';
 
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
+import { UsuariosService } from './services/usuarios.service';
+import { ArticuloComponent } from './articulo/articulo.component';
 
 // the second parameter 'es' is optional
 registerLocaleData(localeEs, 'es');
@@ -19,7 +21,8 @@ registerLocaleData(localeEs, 'es');
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent
+    AboutComponent,
+    ArticuloComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,10 @@ registerLocaleData(localeEs, 'es');
     HomeModule,
     TareasModule
   ],
-  providers: [ { provide: LOCALE_ID, useValue: 'es' } ],
+  providers: [ 
+    UsuariosService,
+    { provide: LOCALE_ID, useValue: 'es' }
+   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

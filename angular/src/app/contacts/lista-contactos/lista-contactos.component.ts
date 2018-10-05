@@ -25,10 +25,14 @@ export class ListaContactosComponent implements OnInit {
     .then((response:any) => 
         {this.aContactos = response.results
         console.log(this.aContactos)}) */
-    this.usuarios.getLista().then(
+    
+        /* this.usuarios.getLista().then(
       (response:any) => {this.aContactos = response}
-    )
-  }
+    ) */
+
+    this.usuarios.getListaAA().then(
+      (response:any) => {this.aContactos=response}
+    )}
 
   borrarContacto(emailBorrar) {
     this.aContactos= this.aContactos.filter(

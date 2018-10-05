@@ -1,3 +1,20 @@
 <p>
-  about works!
+  Mi empresa es {{!empresa ? 'mi empresa' : empresa}}
 </p>
+<p>
+  Empresa Cliente : {{cliente?.nombre}}
+</p>
+
+<cas-articulo 
+  [autor]="'Pepe Pérez'"
+  [titulo]= "'Angular Fundamentos'">
+  Acerca de Angular
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt quaerat deserunt voluptatum est aspernatur iusto voluptate. Sint ducimus culpa iure sequi obcaecati in sunt veniam doloremque vitae, voluptatum aspernatur vero!</p>
+  <p>Odio ad sapiente doloremque, distinctio veritatis voluptas voluptatem eos et obcaecati. Dolorem, sint? Sapiente soluta porro vel exercitationem, saepe, tempore deserunt aut commodi obcaecati inventore accusamus culpa quidem, est suscipit.</p>
+  <p>Perferendis sed dolorem delectus maiores deserunt tempore dolorum laborum nam quas velit nobis rerum soluta illo cum, fuga ullam quasi explicabo asperiores reprehenderit perspiciatis sequi omnis ipsam! Eius, voluptatibus nam?</p>
+  <p>Consequuntur cumque hic optio minima voluptas recusandae consequatur tenetur commodi omnis voluptatum, beatae eum sed! Nesciunt nostrum labore fuga, beatae ad non? Veritatis distinctio rerum, eveniet architecto unde fugiat iure.</p>
+</cas-articulo>
+<cas-articulo 
+  [autor]="'Juan Pérez'"
+  [titulo]= "'Angular Avanzado'"
+></cas-articulo>

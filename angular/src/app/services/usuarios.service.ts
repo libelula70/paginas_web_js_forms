@@ -16,13 +16,18 @@ export class UsuariosService {
     this.url=environment.api_user
    }
 
-  getLista() {
-    return new Promise( (resolve, reject) => {
+  getLista(): Promise<Array<ContactoIf>> {
+    return new Promise<Array<ContactoIf>>( (resolve, reject) => {
       this.http.get(this.url).toPromise()
           .then ((response: any) => {
             this.aContactos = response.results
             resolve(this.aContactos)
-          })
+          }, (error) => {console.log(error)})
     })
+  }
+
+  async getListaAA(): Promise<Array<ContactoIf>>{
+    let response:any = await this.http.get(this.url).toPromise()
+    return response.results
   }
 }

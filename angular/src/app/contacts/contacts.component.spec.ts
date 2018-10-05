@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContactsComponent } from './contacts.component';
+import { ListaContactosComponent } from './lista-contactos/lista-contactos.component';
+import { ContactoComponent } from './contacto/contacto.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UsuariosService } from '../services/usuarios.service';
 
 describe('ContactsComponent', () => {
   let component: ContactsComponent;
@@ -8,7 +12,13 @@ describe('ContactsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContactsComponent ]
+      declarations: [ 
+        ContactsComponent,
+        ListaContactosComponent,
+        ContactoComponent
+       ],
+        imports: [HttpClientModule],
+        providers: [UsuariosService]
     })
     .compileComponents();
   }));
